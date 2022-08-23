@@ -13,6 +13,7 @@
 
     <?php
         $students = [
+            [
             'Nome' => 'Rosario',
             'Cognome' => 'Scuotto',
             'Voti' => [
@@ -24,6 +25,7 @@
                 'Scienze' => 10,
                 'Religione' => 10,
                 'Ed. Fisica' => 10
+                ]
             ],
             [
                 'Nome' => 'STUDENT',
@@ -37,26 +39,40 @@
                     'Scienze' => 5,
                     'Religione' => 3,
                     'Ed. Fisica' => 2
-                ],
+                ]
             ],
             [
                 'Nome' => 'STUDENT',
                 'Cognome' => '3',
                 'Voti' => [
                     'Italiano' => 10,
-                    'Matematica' => 9,
-                    'Informatica' => 8,
-                    'Storia' => 7,
+                    'Matematica' => 6,
+                    'Informatica' => 6,
+                    'Storia' => 3,
                     'Geografia' => 6,
-                    'Scienze' => 5,
+                    'Scienze' => 8,
                     'Religione' => 3,
                     'Ed. Fisica' => 2
-                ],
+                ]
             ],
         ];
-        var_dump($students); 
+        /* var_dump($students);  */
+
+        for ($i = 0; $i < count($students); $i++) {
     ?>
-        
-        
+        <ul>
+            <li>
+                <?php echo $students[$i]['Nome']; ?>
+            </li>
+            <li>
+                <?php echo $students[$i]['Cognome']; ?>
+            </li>
+            <li>
+                Media: <?php echo array_sum($students[$i]['Voti']) / count($students[$i]['Voti']); ?>
+            </li>
+        </ul>
+    <?php
+        }
+    ?>
 </body>
 </html>
