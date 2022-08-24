@@ -62,10 +62,7 @@
     ?>
         <ul>
             <li>
-                <?php echo $students[$i]['Nome']; ?>
-            </li>
-            <li>
-                <?php echo $students[$i]['Cognome']; ?>
+                <?php echo $students[$i]['Nome'] . ' ' . $students[$i]['Cognome']; ?>
             </li>
             <li>
                 Media: <?php echo array_sum($students[$i]['Voti']) / count($students[$i]['Voti']); ?>
